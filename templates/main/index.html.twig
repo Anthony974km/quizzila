@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quizz{% endblock %}
+
+{% block body %}
+
+
+
+
+<h1>Quizz's {{quizz.pro}}</h1>
+<li>
+{% for question in quizz.questions %}
+{{question}}
+{% for reponse in question.reponses %}
+<button>{{reponse}}</button>
+{% endfor %}
+{% endfor %}
+</li>
+
+
+<li> <code><a href="{{path('app_quizz_index', {})}}">Return to Quizz Index</a></code></li>
+
+{% endblock %}

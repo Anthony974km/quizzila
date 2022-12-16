@@ -22,7 +22,7 @@
                 <td>{{ quizz.pro }}</td>
                 
                 <td>
-                    <a href="{{ path('app_quizz_show', {'id': quizz.id}) }}">show</a>
+                    <a href="{{ path('app', {'id': quizz.id}) }}">show</a>
                     <a href="{{ path('app_quizz_edit', {'id': quizz.id}) }}">edit</a>
                 </td>
             </tr>
@@ -35,4 +35,7 @@
     </table>
 
     <a href="{{ path('app_quizz_new') }}">Create new</a>
+    <div>
+    <a href="{{ path('app_home') }}">Return</a>
+    </div>
 {% endblock %}
