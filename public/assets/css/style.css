@@ -32,8 +32,11 @@ button{
     flex-direction: column;
 }
 
-h3{
+.question {
     display: flex;
-    justify-content: center;
-    color: blue;
+    align-items: flex;
+    justify-content: end;
+    flex-direction: column;
+    margin: 50px;
+    padding: 10px;
 }

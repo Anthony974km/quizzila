@@ -9,15 +9,14 @@
 
 <h1>Quizz's {{quizz.pro}}</h1>
 <div class="question">
-{% for question in quizz.questions %}
 {{question}}
+<form method="post" action="{{path('app_do_quizz', {id:quizz.id})}}">
 {% for reponse in question.reponses %}
-<button>{{reponse}}</button>
+<input type="submit" name="{{reponse.id}}" value="{{reponse}}">
 {% endfor %}
-{% endfor %}
+
+</form>
 </div>
 
-
-<li> <code><a href="{{path('app_quizz_index', {})}}">Return to Quizz Index</a></code></li>
 
 {% endblock %}

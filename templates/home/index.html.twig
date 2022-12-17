@@ -17,13 +17,27 @@
         <li> <code><a href="{{path('app_login', {})}}">Login</a></code></li>
     {% else %}
 
-    <h3>Hello Administrator !</h3>
+    <h3>Hello {{app.user}} !</h3>
+    
+    {# {if role user = admin} #}
     <ul>
-        <li><code><a href="{{path('app_reponse_index', {})}}">Reponse Index</a></code></li>
-        <li><code><a href="{{path('app_question_index', {})}}">Question Index</a></code></li>
-        <li><code><a href="{{path('app_quizz_index', {})}}">Quizz Index</a></code></li>
-
+        <li><code><a href="{{path('app_reponse_index', {})}}">Reponse</a></code></li>
+        <li><code><a href="{{path('app_question_index', {})}}">Question</a></code></li>
+        <li><code><a href="{{path('app_quizz_index', {})}}">Quizz</a></code></li>
+        <li><code><a href="{{path('app_user_index', {})}}">User Pro</a></code></li>
     </ul>
+
+    {# {elseif role user = pro} #}
+    <ul>
+        <li><code><a href="{{path('app_reponse_index', {})}}">See the results</a></code></li>
+    </ul>
+    
+    {# {else} #}
+    <ul>
+        <li><code><a href="{{path('app_reponse_index', {})}}">Start the quiz</a></code></li>
+    </ul>
+    {# {% endif %} #}
+    
     </div>
 
 <div class="sectionLogout">
