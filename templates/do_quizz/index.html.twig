@@ -9,12 +9,11 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>You have finished the quiz! 🎉✅</h1>
 
-    This friendly message is coming from:
+    
     <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Riviere/Documents/osipro/quizzila/src/Controller/DoQuizzController.php'|file_link(0) }}">src/Controller/DoQuizzController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Riviere/Documents/osipro/quizzila/templates/do_quizz/index.html.twig'|file_link(0) }}">templates/do_quizz/index.html.twig</a></code></li>
+        <li>Please go back to the quiz page.<code><a href="{{ path('app_quizz_client_index') }}">Return</a></code></li>
     </ul>
 </div>
 {% endblock %}

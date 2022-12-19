@@ -13,30 +13,30 @@
 
     <ul>
     {% if not app.user %}
-        <li> <code><a href="{{path('app_register', {})}}">Register</a></code></li>
+        <li> <code><a href="{{path('app_register_client', {})}}">Register</a></code></li>
         <li> <code><a href="{{path('app_login', {})}}">Login</a></code></li>
     {% else %}
 
     <h3>Hello {{app.user}} !</h3>
     
-    {# {if role user = admin} #}
+    {% if app.user.roles[0] == 'ROLE_ADMIN'  %}
     <ul>
         <li><code><a href="{{path('app_reponse_index', {})}}">Reponse</a></code></li>
         <li><code><a href="{{path('app_question_index', {})}}">Question</a></code></li>
         <li><code><a href="{{path('app_quizz_index', {})}}">Quizz</a></code></li>
-        <li><code><a href="{{path('app_user_index', {})}}">User Pro</a></code></li>
+        <li><code><a href="{{path('app_user_index', {})}}">User </a></code></li>
     </ul>
 
-    {# {elseif role user = pro} #}
+    {% elseif app.user.roles[0] == 'ROLE_PRO' %}
     <ul>
         <li><code><a href="{{path('app_reponse_index', {})}}">See the results</a></code></li>
     </ul>
     
-    {# {else} #}
+    {% else %}
     <ul>
-        <li><code><a href="{{path('app_reponse_index', {})}}">Start the quiz</a></code></li>
+        <li><code><a href="{{path('app_quizz_client_index', {})}}">Start the quiz</a></code></li>
     </ul>
-    {# {% endif %} #}
+    {% endif %}
     
     </div>
 

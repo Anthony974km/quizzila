@@ -5,14 +5,16 @@
 {% block body %}
 
 
-
-
-<h1>Quizz's {{quizz.pro}}</h1>
+<h1>The {{quizz.pro}}'s quiz</h1>
 <div class="question">
 {{question}}
 <form method="post" action="{{path('app_do_quizz', {id:quizz.id})}}">
 {% for reponse in question.reponses %}
-<input type="submit" name="{{reponse.id}}" value="{{reponse}}">
+    <div class="reponse">
+
+        <input type="submit" name="{{reponse.id}}" value="{{reponse}}" maxlength="5" size="4">
+
+    </div>
 {% endfor %}
 
 </form>
